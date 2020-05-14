@@ -46,7 +46,16 @@ class DemoApplicationTests {
 	void serviceTest() {
 		Set<Recipe> recipes = recipeService.getRecipies();
 		recipes.forEach(recipe -> {
-			System.out.println(recipe);
+			System.out.println("========================================>>> Description: " + recipe.getDescription());
+			System.out.println("========================================>>> Difficulty: " + recipe.getDifficulty());
+			recipe.getCategories().forEach(category -> {
+				System.out.println("============>>> Category: " + category.getDescription());
+			});
+			recipe.getIngredients().forEach(ingredient -> {
+				String str = ingredient.getDescription() + ":" + ingredient.getAmount() + ":"
+						+ ingredient.getUnitOfMeasure().getDescription();
+				System.out.println("============>>> Ingredient: " + str);
+			});
 		});
 	}
 
