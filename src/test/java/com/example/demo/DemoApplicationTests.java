@@ -32,7 +32,7 @@ class DemoApplicationTests {
 
 	@Test
 	void repositoryTest() {
-		String str = "%s ID is %d for %s";
+		String str = "=====>>> %s ID is %d for %s";
 		Optional<Category> category = categoryRepository.findByDescription("Italian");
 		System.out.println(String.format(str, "Category", category.get().getId(), category.get().getDescription()));
 

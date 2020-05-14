@@ -11,11 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Ingredient {
+public class Ingredient extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String description;
     private BigDecimal amount;
 
@@ -24,14 +21,6 @@ public class Ingredient {
 
     @ManyToOne
     private Recipe recipe;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDescription() {
         return description;
