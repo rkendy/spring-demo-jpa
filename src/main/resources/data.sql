@@ -1,3 +1,8 @@
+-- Default data to be loaded into database.
+-- Place file in classpath.
+-- For data-${platform}.sql: set spring.datasource.platform
+-- Check spring.jpa.hibernate.ddl-auto for conflict. Set to 'none' or 'validate'
+-- To use hibernate initialization, use import.sql
 INSERT INTO category (description) VALUES ('American');
 INSERT INTO category (description) VALUES ('Italian');
 INSERT INTO category (description) VALUES ('Mexican');

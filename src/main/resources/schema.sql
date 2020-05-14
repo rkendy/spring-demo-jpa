@@ -1,0 +1,5 @@
+-- Default schema to be created in the database.
+-- Place file in classpath.
+-- For schema-${platform}.sql: set spring.datasource.platform
+-- Check spring.jpa.hibernate.ddl-auto for conflict. Set to 'none' or 'validate'
+-- To use hibernate initialization, use import.sql
