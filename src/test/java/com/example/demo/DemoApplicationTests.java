@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Optional;
 import java.util.Set;
 
@@ -35,8 +38,11 @@ class DemoApplicationTests {
 		String str = "=====>>> %s ID is %d for %s";
 		Optional<Category> category = categoryRepository.findByDescription("Italian");
 		System.out.println(String.format(str, "Category", category.get().getId(), category.get().getDescription()));
+		assertNotNull(category.get());
 
 		Optional<UnitOfMeasure> unitOfMeasure = unitOfMeasureReporitory.findByDescription("Cup");
+		assertNotNull(unitOfMeasure.get());
+
 		System.out.println(
 				String.format(str, "UnitOfMeasure", unitOfMeasure.get().getId(), unitOfMeasure.get().getDescription()));
 
@@ -45,6 +51,8 @@ class DemoApplicationTests {
 	@Test
 	void serviceTest() {
 		Set<Recipe> recipes = recipeService.getRecipies();
+		assertEquals(recipes.size(), 1);
+
 		recipes.forEach(recipe -> {
 			System.out.println("========================================>>> Description: " + recipe.getDescription());
 			System.out.println("========================================>>> Difficulty: " + recipe.getDifficulty());
