@@ -24,4 +24,13 @@ public class RecipeServiceImpl implements RecipeService {
         return recipes;
     }
 
+    @Override
+    public Recipe save(Recipe recipe) {
+        return recipeRepository.save(recipe);
+    }
+
+    @Override
+    public void delete(Recipe recipe) {
+        recipeRepository.delete(recipe);
+    }
 }

@@ -12,11 +12,11 @@ import com.example.demo.model.Recipe;
 import com.example.demo.repository.RecipeRepository;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-public class RecipeServiceImplTest {
+public class RecipeServiceImplJUnit4Test {
+
     RecipeServiceImpl recipeService;
 
     @Mock
@@ -28,7 +28,8 @@ public class RecipeServiceImplTest {
         recipeService = new RecipeServiceImpl(recipeRepository);
     }
 
-    @Test
+    // JUnit4:
+    @org.junit.Test
     public void getRecipes() throws Exception {
         Recipe recipe = new Recipe();
         Set<Recipe> recipesData = new HashSet<>();
